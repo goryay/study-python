@@ -4,6 +4,6 @@
 
 # Chapter two
 
-*[This]() shows how to work with variables, simple data types, and strings. Namely: f-string, case change (lower(), upper(), title()), hyphenation (\n), tabulation (\t) and whitespace removal (rstrip(), lstrip(), strip()).*
+*[This](https://github.com/goryay/study-python/tree/main/2_chap) shows how to work with variables, simple data types, and strings. Namely: f-string, case change (lower(), upper(), title()), hyphenation (\n), tabulation (\t) and whitespace removal (rstrip(), lstrip(), strip()).*
 
 # Chapter three
