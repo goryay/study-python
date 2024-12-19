@@ -12,3 +12,7 @@
 [In this](https://github.com/goryay/study-python/tree/main/chap_4) chapter we studied working with lists and tuples.
 The for loop, for going through the list and outputting the list data. Also, creating a numeric list (`range()`), slices(`list([::])`).
 Tuples are like lists, they differ only in the fact that they cannot be changed and remain unchanged throughout the life of the program. If you want to change a tuple, you must assign a new value to the variable where the tuple is stored. 
+
+# Chapter five
+
+# Chapter six
