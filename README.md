@@ -16,3 +16,5 @@ Tuples are like lists, they differ only in the fact that they cannot be changed 
 # Chapter five
 
 # Chapter six
+
+# Chapter seven
