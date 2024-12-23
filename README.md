@@ -67,3 +67,4 @@ Input `input()` is used to get input data and work with it in the program.
 The `while` loop allows you to execute the program until a certain condition remains true.
 
 # Chapter eight
+[Dedicated to functions](). A named block of code designed to solve one specific task `def`.
