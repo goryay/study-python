@@ -34,4 +34,29 @@ used. Sometimes it is necessary to check several possible situations, for this p
 
 # Chapter six
 
+[Chapter six](https://github.com/goryay/study-python/tree/main/chap_6) is about dictionaries - the key-value
+`a = {"color": "red"}`. This data structure is designed to combine
+related information. Sometimes it happens that you want to create an empty dictionary `a = {}`, and to add to the
+dictionary you need to do the following:
+
+```
+a['color'] = 'red'
+```
+
+to delete you need to do the following:
+
+```
+del a['color']
+```
+
+You can also implement a list in the dictionary:
+
+```
+a = {
+    'color': 'red'
+    'alphabet': ['a', 'b', 'c'].
+}
+```
+
 # Chapter seven
+
