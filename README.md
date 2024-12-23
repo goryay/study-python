@@ -60,3 +60,10 @@ a = {
 
 # Chapter seven
 
+[Chapter 7](https://github.com/goryay/study-python/tree/main/chap_7) talks about the while loop and data entry.
+
+Input `input()` is used to get input data and work with it in the program.
+
+The `while` loop allows you to execute the program until a certain condition remains true.
+
+# Chapter eight
