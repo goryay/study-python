@@ -4,4 +4,4 @@ def make_shirt(text, size='L'):
 
 make_shirt("I love Python")
 
-make_shirt("I love C++", 'XXL')
+make_shirt("I love C++", 'XXLgit coomit -m ')
