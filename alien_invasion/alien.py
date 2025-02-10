@@ -1,5 +1,4 @@
 import pygame
-from pygame.examples.scrap_clipboard import screen
 from pygame.sprite import Sprite
 
 
