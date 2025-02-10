@@ -74,6 +74,8 @@ class AlienInvasion:
                 self.bullets.remove(bullet)
         print(len(self.bullets))
 
+        collisions = pygame.sprite.groupcollide(self.aliens, self.bullets, True, True)
+
     def _create_fleet(self):
         alien = Alien(self)
         aliem_width, alien_height = alien.rect.size
