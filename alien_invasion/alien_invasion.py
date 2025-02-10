@@ -77,6 +77,18 @@ class AlienInvasion:
                 self.bullets.remove(bullet)
         print(len(self.bullets))
 
+    def _create_fleet(self):
+        alien = Alien(self)
+        aliem_width = alien.rect.width
+
+        current_x = aliem_width
+        while current_x < (self.settings.screen_width - 2 * aliem_width):
+            new_alien = Alien(alien)
+            new_alien.x = current_x
+            new_alien.rect.x = current_x
+            self.aliens.add(new_alien)
+            current_x += 2 * aliem_width
+
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
         for bullet in self.bullets.sprites():
