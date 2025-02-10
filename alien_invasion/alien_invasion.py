@@ -12,11 +12,7 @@ class AlienInvasion:
         pygame.init()
         self.clock = pygame.time.Clock()
         self.settings = Settings()
-
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
-        # self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-        # self.settings.screen_width = self.screen.get_rect().width
-        # self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption('Alien Invasion')
 
         # В книге дан пример того, что тут screen нужно писать. Но по факту, тут self. Нужна не переменная, а экземпляр.
@@ -32,6 +28,7 @@ class AlienInvasion:
             self.ship.update()
             self.bullets.update()
             self._update_bullets()
+            self.aliens.update()
             self._update_screen()
             self.clock.tick(60)
 
@@ -96,6 +93,10 @@ class AlienInvasion:
         new_alien.rect.x = x_position
         new_alien.rect.y = y_position
         self.aliens.add(new_alien)
+
+    def _update_aliens(self):
+        self.aliens.update()
+        # for alien in self.aliens.copy():
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
