@@ -1,9 +1,11 @@
 import sys
 import pygame
-from settings import Settings
+from time import sleep
 from ship import Ship
-from bullet import Bullet
 from alien import Alien
+from bullet import Bullet
+from settings import Settings
+from game_stats import GameStats
 
 
 class AlienInvasion:
@@ -14,6 +16,7 @@ class AlienInvasion:
         self.settings = Settings()
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption('Alien Invasion')
+        self.stats = GameStats(self)
 
         # В книге дан пример того, что тут screen нужно писать. Но по факту, тут self. Нужна не переменная, а экземпляр.
         self.ship = Ship(self)
@@ -106,13 +109,26 @@ class AlienInvasion:
     def _update_aliens(self):
         self._check_fleet_edges()
         self.aliens.update()
-        # for alien in self.aliens.copy():
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            self._ship_hit()
+            print(f"Ship hit!!!")
 
     def _check_fleet_edges(self):
         for alien in self.aliens.sprites():
             if alien.check_edges():
                 self._change_fleet_direction()
                 break
+
+    def _ship_hit(self):
+        self.stats.ships_left -= 1
+
+        self.aliens.empty()
+        self.bullets.empty()
+
+        self._create_fleet()
+        self.ship.center_ship()
+
+        sleep(0.5)
 
     def _change_fleet_direction(self):
         for alien in self.aliens.sprites():
