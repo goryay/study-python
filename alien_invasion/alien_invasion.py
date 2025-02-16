@@ -126,7 +126,7 @@ class AlienInvasion:
                 break
 
     def _ship_hit(self):
-        if self.stats.ship_left > 0:
+        if self.stats.ships_left > 0:
             self.stats.ships_left -= 1
 
             self.aliens.empty()
