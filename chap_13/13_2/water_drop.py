@@ -35,23 +35,41 @@ class WaterDrop:
         current_x, current_y = drop_width, drop_height
         while current_y < (self.settings.screen_height - 3 * drop_height):
             while current_x < (self.settings.screen_width - 2 * drop_width):
-                new_drop = Drop(self)
-                new_drop.x = current_x
-                new_drop.rect.x = current_x
-                new_drop.rect.y = current_y
-                self.drops.add(new_drop)
+                self._create_single_drop(current_x, current_y)
                 current_x += 2 * drop_width
 
             current_x = drop_width
             current_y += 2 * drop_height
 
+    def _create_single_drop(self, x, y):
+        new_drop = Drop(self)
+        new_drop.x = x
+        new_drop.rect.x = x
+        new_drop.rect.y = y
+        self.drops.add(new_drop)
+
     def _update_drops(self):
         self.drops.update()
 
     def _check_water_drop_bottom(self):
-        for drop in self.drops.copy():
-            if drop.rect.bottom >= self.settings.screen_height:
+        drops_to_remove = [drop for drop in self.drops if drop.rect.bottom >= self.settings.screen_height]
+
+        if drops_to_remove:
+            for drop in drops_to_remove:
                 drop.kill()
+
+            self._create_new_row()
+
+    def _create_new_row(self):
+        drop = Drop(self)
+        drop_width, drop_height = drop.rect.size
+
+        current_x = drop_width
+        current_y = -drop_height
+
+        while current_x < (self.settings.screen_width - 2 * drop_width):
+            self._create_single_drop(current_x, current_y)
+            current_x += 2 * drop_width
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
