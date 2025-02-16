@@ -6,20 +6,20 @@ from settings import Settings
 
 class WaterDrop:
     def __init__(self):
-
         pygame.init()
         self.clock = pygame.time.Clock()
         self.settings = Settings()
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Water Drop")
 
-        self.drop = pygame.sprite.Group()
-        self._create_drop()
+        self.drops = pygame.sprite.Group()
+        self._create_drops()
 
     def run_game(self):
         while True:
             self._event_check()
             self._update_drops()
+            self._check_water_drop_bottom()
             self._update_screen()
             self.clock.tick(60)
 
@@ -28,7 +28,7 @@ class WaterDrop:
             if event.type == pygame.QUIT:
                 sys.exit()
 
-    def _create_drop(self):
+    def _create_drops(self):
         drop = Drop(self)
         drop_width, drop_height = drop.rect.size
 
@@ -39,20 +39,23 @@ class WaterDrop:
                 new_drop.x = current_x
                 new_drop.rect.x = current_x
                 new_drop.rect.y = current_y
-                self.drop.add(new_drop)
+                self.drops.add(new_drop)
                 current_x += 2 * drop_width
 
             current_x = drop_width
             current_y += 2 * drop_height
 
     def _update_drops(self):
-        for drop in self.drop:
-            drop.update()
+        self.drops.update()
+
+    def _check_water_drop_bottom(self):
+        for drop in self.drops.copy():
+            if drop.rect.bottom >= self.settings.screen_height:
+                drop.kill()
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
-        self.drop.draw(self.screen)
-
+        self.drops.draw(self.screen)
         pygame.display.flip()
 
 

@@ -1,5 +1,6 @@
 import pygame
-from pygame.sprite  import Sprite
+from pygame.sprite import Sprite
+
 
 class Drop(Sprite):
     def __init__(self, wd):
@@ -17,3 +18,6 @@ class Drop(Sprite):
     def update(self):
         self.y += 1
         self.rect.y = self.y
+
+        if self.rect.top >= self.screen.get_rect().bottom:
+            self.kill()
