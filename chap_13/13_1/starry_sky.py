@@ -14,11 +14,14 @@ class StarrySky:
 
         self.stars = pygame.sprite.Group()
 
+        self.game_active = True
+
         self._create_stars_sky()
 
     def window_start(self):
         while True:
             self._check_events()  # Обработка событий
+
             self._update_screen()
             self.clock.tick(60)
 
