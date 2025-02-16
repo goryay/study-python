@@ -2,6 +2,7 @@ import pygame
 import sys
 from settings import Settings
 from stars import Star
+from random import randint
 
 
 class StarrySky:
@@ -15,6 +16,7 @@ class StarrySky:
         self.stars = pygame.sprite.Group()
 
         self.game_active = True
+        self.visible = True
 
         self._create_stars_sky()
 
@@ -22,13 +24,28 @@ class StarrySky:
         while True:
             self._check_events()  # Обработка событий
 
+            self._update_stars()
             self._update_screen()
+
+            if all(not star.visible for star in self.stars):
+                pygame.time.delay(3000)
+                pygame.quit()
+                sys.exit()
+
             self.clock.tick(60)
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
-        self.stars.draw(self.screen)
+        # self.stars.draw(self.screen
+        for star in self.stars:
+            if star.visible:
+                self.screen.blit(star.image, star.rect)
+
         pygame.display.flip()
+
+    def _update_stars(self):
+        for star in self.stars:
+            star.update_visible()
 
     def _check_events(self):
         for event in pygame.event.get():
