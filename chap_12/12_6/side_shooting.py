@@ -3,6 +3,7 @@ import pygame
 from settings import Settings
 from rocket import Rocket
 from bullet import Bullet
+from alien import Alien
 
 
 class SideShooting:
@@ -14,6 +15,9 @@ class SideShooting:
         pygame.display.set_caption("Sideways shooting")
         self.rocket = Rocket(self)
         self.bullets = pygame.sprite.Group()
+        self.aliens = pygame.sprite.Group()
+
+        self._create_fleet()
 
     def window_start(self):
         while True:
@@ -21,6 +25,7 @@ class SideShooting:
             self.rocket.update()
             self.bullets.update()
             self._update_bullets()
+            self._update_aliens()
             self._update_screen()
 
             pygame.display.flip()
@@ -56,6 +61,42 @@ class SideShooting:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
 
+    def _create_fleet(self):
+        alien = Alien(self)
+        alien_width, alien_height = alien.rect.width, alien.rect.height
+
+        number_aliens_x = 5
+        start_x = self.settings.screen_width - (number_aliens_x * alien_width * 2)
+
+        available_y_space = self.settings.screen_height - (2 * alien_height)
+        number_rows = available_y_space // (alien_height * 2)
+
+        for row_number in range(number_rows):
+            for alien_number in range(number_aliens_x):
+                new_alien = Alien(self)
+                new_alien.x = start_x + 2 * alien_width * alien_number
+                new_alien.rect.x = new_alien.x
+                new_alien.y = alien_height + 2 * alien_height * row_number
+                new_alien.rect.y = new_alien.y
+                self.aliens.add(new_alien)
+
+    def _update_aliens(self):
+        for alien in self.aliens.sprites():
+            if alien.rect.right <= self.rocket.rect.left:
+                self.settings.alien_speed = 0
+        self.aliens.update()
+
+    def _check_fleet_edges(self):
+        for alien in self.aliens.sprites():
+            if alien.check_edges():
+                self._change_fleet_direction()
+                break
+
+    def _change_fleet_direction(self):
+        for alien in self.aliens.sprites():
+            alien.rect.y += self.settings.fleet_drop_speed
+        self.settings.fleet_direction *= -1
+
     def _update_bullets(self):
         self.bullets.update()
 
@@ -64,11 +105,17 @@ class SideShooting:
                 self.bullets.remove(bullet)
         print(len(self.bullets))
 
+        collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+
+        if not self.aliens:
+            self._create_fleet()
+
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.rocket.blitme()
+        self.aliens.draw(self.screen)
         pygame.display.flip()
 
 
