@@ -1,4 +1,5 @@
 import sys
+import time
 import pygame
 from settings import Settings
 from rocket import Rocket
@@ -18,6 +19,10 @@ class SideShooting:
         self.aliens = pygame.sprite.Group()
 
         self._create_fleet()
+
+        self.aliens_destroyed = 0
+        self.collisions_with_ship = 0
+        self.last_collision_time = 0
 
     def window_start(self):
         while True:
@@ -82,9 +87,29 @@ class SideShooting:
 
     def _update_aliens(self):
         for alien in self.aliens.sprites():
-            if alien.rect.right <= self.rocket.rect.left:
-                self.settings.alien_speed = 0
+            # Если хотя бы один пришелец дошел до левого края – пауза 5 сек и перезапуск флота
+            if alien.rect.left <= 0:
+                print("Пришельцы достигли левого края! Пауза 5 сек...")
+                pygame.time.delay(5000)  # Пауза на 5 секунд
+                self._reset_fleet()
+                return
+
+            # Проверяем столкновение с кораблём
+            if pygame.sprite.spritecollideany(self.rocket, self.aliens):
+                current_time = time.time()
+                if current_time - self.last_collision_time > 1:  # Разрешаем считать столкновение раз в 1 секунду
+                    print("🚨 Столкновение с кораблём!")
+                    self.collisions_with_ship += 1
+                    self.last_collision_time = current_time  # Обновляем время столкновения
+                    self._reset_fleet()
+                    return
+
         self.aliens.update()
+
+    def _reset_fleet(self):
+        self.aliens.empty()  # Удаляем всех пришельцев
+        self._create_fleet()  # Создаём новый флот
+        self.settings.alien_speed = 1  # Сбрасываем скорость
 
     def _check_fleet_edges(self):
         for alien in self.aliens.sprites():
@@ -103,9 +128,11 @@ class SideShooting:
         for bullet in self.bullets.copy():
             if bullet.rect.left > self.settings.screen_width:
                 self.bullets.remove(bullet)
-        print(len(self.bullets))
 
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+
+        if collisions:
+            self.aliens_destroyed += sum(len(v) for v in collisions.values())
 
         if not self.aliens:
             self._create_fleet()
@@ -116,6 +143,10 @@ class SideShooting:
             bullet.draw_bullet()
         self.rocket.blitme()
         self.aliens.draw(self.screen)
+
+        print(
+            f"👾 Уничтожено пришельцев: {self.aliens_destroyed} | 🚀 Столкновений с кораблём: {self.collisions_with_ship}")
+
         pygame.display.flip()
 
 
