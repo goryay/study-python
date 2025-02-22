@@ -41,10 +41,6 @@ class AlienInvasion:
             self._update_screen()
             self.clock.tick(60)
 
-    def _create_fleet(self):
-        alien = Alien(self)
-        self.aliens.add(alien)
-
     def _check_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -60,6 +56,7 @@ class AlienInvasion:
     def _check_play_button(self, mouse_pos):
         button_clicked = self.play_button.rect.collidepoint(mouse_pos)
         if button_clicked and not self.game_active:
+            self.settings.initialize_dynamic_settings()
             self.stats.reset_stats()
             self.game_active = True
 
@@ -107,6 +104,7 @@ class AlienInvasion:
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
+            self.settings.increase_speed()
 
     def _create_fleet(self):
         alien = Alien(self)
@@ -146,6 +144,8 @@ class AlienInvasion:
     def _ship_hit(self):
         if self.stats.ships_left > 0:
             self.stats.ships_left -= 1
+
+            self.settings.initialize_dynamic_settings()
 
             self.aliens.empty()
             self.bullets.empty()
