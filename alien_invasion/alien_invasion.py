@@ -7,6 +7,7 @@ from button import Button
 from bullet import Bullet
 from settings import Settings
 from game_stats import GameStats
+from scoreboard import Scoreboard
 
 
 class AlienInvasion:
@@ -18,6 +19,7 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption('Alien Invasion')
         self.stats = GameStats(self)
+        self.sb = Scoreboard(self)
 
         # В книге дан пример того, что тут screen нужно писать. Но по факту, тут self. Нужна не переменная, а экземпляр.
         self.ship = Ship(self)
@@ -175,6 +177,8 @@ class AlienInvasion:
             bullet.draw_bullet()
         self.ship.blitme()
         self.aliens.draw(self.screen)
+
+        self.sb.show_score()
 
         if not self.game_active:
             self.play_button.draw_button()
