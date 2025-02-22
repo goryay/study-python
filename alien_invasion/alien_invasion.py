@@ -60,7 +60,7 @@ class AlienInvasion:
         if button_clicked and not self.game_active:
             self.settings.initialize_dynamic_settings()
             self.stats.reset_stats()
-            self.sb.score_rect()
+            self.sb.prep_score()
             self.game_active = True
 
             self.bullets.empty()
@@ -97,7 +97,7 @@ class AlienInvasion:
         for bullet in self.bullets.copy():
             if bullet.rect.bottom < 0:
                 self.bullets.remove(bullet)
-        print(len(self.bullets))
+        # print(len(self.bullets))
 
         self._check_bullet_alien_collisions()
 
