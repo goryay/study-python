@@ -19,4 +19,7 @@ for value in poss_results:
 print(frequencies)
 
 fig = px.bar(x=poss_results, y=frequencies)
+title = "Results of Rolling One D6 1000 Times"
+lables = {'x': 'Result', 'y': 'Frequency of Result'}
+fig = px.bar(x=poss_results, y=frequencies, title=title, labels=lables)
 fig.show()
