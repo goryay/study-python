@@ -1,3 +1,4 @@
+import plotly.express as px
 from die import Die
 
 die = Die()
@@ -16,3 +17,6 @@ for value in poss_results:
     frequencies.append(frequency)
 
 print(frequencies)
+
+fig = px.bar(x=poss_results, y=frequencies)
+fig.show()
