@@ -1,0 +1,501 @@
+{
+    "type": "FeatureCollection",
+    "metadata": {
+        "generated": 1741437321000,
+        "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+        "title": "USGS Magnitude 4.5+ Earthquakes, Past Day",
+        "status": 200,
+        "api": "1.14.1",
+        "count": 12
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5,
+                "place": "Banda Sea",
+                "time": 1741424208667,
+                "updated": 1741425089040,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxlx",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxlx.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 385,
+                "net": "us",
+                "code": "6000pxlx",
+                "ids": ",us6000pxlx,",
+                "sources": ",us,",
+                "types": ",origin,phase-data,",
+                "nst": 46,
+                "dmin": 2.082,
+                "rms": 0.69,
+                "gap": 56,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 5.0 - Banda Sea"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    129.9282,
+                    -6.6178,
+                    168.403
+                ]
+            },
+            "id": "us6000pxlx"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5.1,
+                "place": "98 km NE of Lobuche, Nepal",
+                "time": 1741423818074,
+                "updated": 1741427349156,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxlv",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxlv.geojson",
+                "felt": 2,
+                "cdi": 3.1,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 401,
+                "net": "us",
+                "code": "6000pxlv",
+                "ids": ",us6000pxlv,",
+                "sources": ",us,",
+                "types": ",dyfi,origin,phase-data,",
+                "nst": 87,
+                "dmin": 2.124,
+                "rms": 0.69,
+                "gap": 41,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 5.1 - 98 km NE of Lobuche, Nepal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    87.518,
+                    28.5805,
+                    10
+                ]
+            },
+            "id": "us6000pxlv"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 4.5,
+                "place": "126 km SSE of Sanana, Indonesia",
+                "time": 1741423106779,
+                "updated": 1741425319040,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxlu",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxlu.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 312,
+                "net": "us",
+                "code": "6000pxlu",
+                "ids": ",us6000pxlu,",
+                "sources": ",us,",
+                "types": ",origin,phase-data,",
+                "nst": 41,
+                "dmin": 3.877,
+                "rms": 0.9,
+                "gap": 61,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 4.5 - 126 km SSE of Sanana, Indonesia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    126.2617,
+                    -3.1641,
+                    8.378
+                ]
+            },
+            "id": "us6000pxlu"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 4.5,
+                "place": "2 km E of Aras-asan, Philippines",
+                "time": 1741421003657,
+                "updated": 1741422187040,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxlt",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxlt.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 312,
+                "net": "us",
+                "code": "6000pxlt",
+                "ids": ",us6000pxlt,",
+                "sources": ",us,",
+                "types": ",origin,phase-data,",
+                "nst": 22,
+                "dmin": 1.951,
+                "rms": 0.43,
+                "gap": 108,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 4.5 - 2 km E of Aras-asan, Philippines"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    126.3293,
+                    8.8852,
+                    72.46
+                ]
+            },
+            "id": "us6000pxlt"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5.2,
+                "place": "46 km ENE of Noda, Japan",
+                "time": 1741417936808,
+                "updated": 1741418842040,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxln",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxln.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 416,
+                "net": "us",
+                "code": "6000pxln",
+                "ids": ",us6000pxln,",
+                "sources": ",us,",
+                "types": ",moment-tensor,origin,phase-data,",
+                "nst": 80,
+                "dmin": 1.14,
+                "rms": 0.71,
+                "gap": 126,
+                "magType": "mww",
+                "type": "earthquake",
+                "title": "M 5.2 - 46 km ENE of Noda, Japan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    142.3491,
+                    40.2053,
+                    58.063
+                ]
+            },
+            "id": "us6000pxln"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 4.5,
+                "place": "south of the Fiji Islands",
+                "time": 1741412690296,
+                "updated": 1741417492040,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxlc",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxlc.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 312,
+                "net": "us",
+                "code": "6000pxlc",
+                "ids": ",us6000pxlc,",
+                "sources": ",us,",
+                "types": ",origin,phase-data,",
+                "nst": 32,
+                "dmin": 5.843,
+                "rms": 0.88,
+                "gap": 94,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 4.5 - south of the Fiji Islands"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    179.021,
+                    -24.078,
+                    535.03
+                ]
+            },
+            "id": "us6000pxlc"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5.3,
+                "place": "44 km SE of Tena, Ecuador",
+                "time": 1741412261481,
+                "updated": 1741418103965,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxlb",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxlb.geojson",
+                "felt": 0,
+                "cdi": 1,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 432,
+                "net": "us",
+                "code": "6000pxlb",
+                "ids": ",us6000pxlb,",
+                "sources": ",us,",
+                "types": ",dyfi,moment-tensor,origin,phase-data,",
+                "nst": 116,
+                "dmin": 0.581,
+                "rms": 0.69,
+                "gap": 70,
+                "magType": "mww",
+                "type": "earthquake",
+                "title": "M 5.3 - 44 km SE of Tena, Ecuador"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.4976,
+                    -1.2481,
+                    184.547
+                ]
+            },
+            "id": "us6000pxlb"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 4.5,
+                "place": "58 km SE of Zaysan, Kazakhstan",
+                "time": 1741404573751,
+                "updated": 1741433897194,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxku",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxku.geojson",
+                "felt": 1,
+                "cdi": 4.8,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 312,
+                "net": "us",
+                "code": "6000pxku",
+                "ids": ",us6000pxku,",
+                "sources": ",us,",
+                "types": ",dyfi,origin,phase-data,",
+                "nst": 42,
+                "dmin": 0.529,
+                "rms": 1.04,
+                "gap": 100,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 4.5 - 58 km SE of Zaysan, Kazakhstan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.4563,
+                    47.1183,
+                    10
+                ]
+            },
+            "id": "us6000pxku"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 4.7,
+                "place": "32 km ENE of Palca, Peru",
+                "time": 1741392811339,
+                "updated": 1741401847795,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxk5",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxk5.geojson",
+                "felt": 1,
+                "cdi": 2.5,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 340,
+                "net": "us",
+                "code": "6000pxk5",
+                "ids": ",us6000pxk5,",
+                "sources": ",us,",
+                "types": ",dyfi,origin,phase-data,",
+                "nst": 49,
+                "dmin": 0.949,
+                "rms": 0.67,
+                "gap": 91,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 4.7 - 32 km ENE of Palca, Peru"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -69.6812,
+                    -17.6557,
+                    155.352
+                ]
+            },
+            "id": "us6000pxk5"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 4.9,
+                "place": "southeast Indian Ridge",
+                "time": 1741380359757,
+                "updated": 1741382178040,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxht",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxht.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 369,
+                "net": "us",
+                "code": "6000pxht",
+                "ids": ",us6000pxht,",
+                "sources": ",us,",
+                "types": ",origin,phase-data,",
+                "nst": 40,
+                "dmin": 17.646,
+                "rms": 0.53,
+                "gap": 67,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 4.9 - southeast Indian Ridge"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    96.2401,
+                    -46.5013,
+                    10
+                ]
+            },
+            "id": "us6000pxht"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 4.7,
+                "place": "3 km NNW of Banisilan, Philippines",
+                "time": 1741366439826,
+                "updated": 1741369713620,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxh8",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxh8.geojson",
+                "felt": 1,
+                "cdi": 3.1,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 340,
+                "net": "us",
+                "code": "6000pxh8",
+                "ids": ",us6000pxh8,",
+                "sources": ",us,",
+                "types": ",dyfi,origin,phase-data,",
+                "nst": 41,
+                "dmin": 0.972,
+                "rms": 0.85,
+                "gap": 90,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 4.7 - 3 km NNW of Banisilan, Philippines"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    124.7098,
+                    7.5218,
+                    10
+                ]
+            },
+            "id": "us6000pxh8"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5.4,
+                "place": "69 km W of Banda Aceh, Indonesia",
+                "time": 1741351369163,
+                "updated": 1741360168162,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pxef",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000pxef.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": 4.224,
+                "alert": "green",
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 449,
+                "net": "us",
+                "code": "6000pxef",
+                "ids": ",us6000pxef,",
+                "sources": ",us,",
+                "types": ",losspager,origin,phase-data,shakemap,",
+                "nst": 90,
+                "dmin": 2.238,
+                "rms": 0.93,
+                "gap": 65,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 5.4 - 69 km W of Banda Aceh, Indonesia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    94.7104,
+                    5.4554,
+                    73.061
+                ]
+            },
+            "id": "us6000pxef"
+        }
+    ],
+    "bbox": [
+        -77.4976,
+        -46.5013,
+        8.378,
+        179.021,
+        47.1183,
+        535.03
+    ]
+}
