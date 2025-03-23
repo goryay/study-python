@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, logout
+from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
 
@@ -16,4 +16,4 @@ def register(request):
             return redirect('learning_logs:index')
 
     context = {'form': form}
-    return render(request, 'accounts/register.html', context)
+    return render(request, 'registration/register.html', context)
