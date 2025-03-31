@@ -1,5 +1,7 @@
 import sys
 import pygame
+import json
+from pathlib import Path
 from time import sleep
 from ship import Ship
 from alien import Alien
@@ -107,7 +109,7 @@ class AlienInvasion:
         elif diff_button_clicked:
             self.settings.difficulty_level = 'difficult'
 
-        # self.settings.initialize_dynamic_settings()
+        self.settings.initialize_dynamic_settings()
 
     def _start_game(self):
         self.stats.reset_stats()
@@ -251,6 +253,15 @@ class AlienInvasion:
             self.difficult_button.draw_button()
 
         pygame.display.flip()
+
+    def _close_game(self):
+        saved_high_score = self.stats.get_saved_high_score()
+        if self.stats.high_score > saved_high_score:
+            path = Path('high_score.json')
+            contents = json.dumps(self.stats.high_score)
+            path.write_text(contents)
+
+        sys.exit()
 
 
 if __name__ == '__main__':
